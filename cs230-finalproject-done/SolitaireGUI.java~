@@ -1,0 +1,40 @@
+/******************************************************
+  * SolitaireGUI.java
+  * Avanti Prasanna, Kim Asenbeck, Amanda  Foun
+  * CS 230 Final Project: SolitaireGUI Class
+  * Start Date: May 9, 2015 
+  * End Date: May 12, 2015
+  * ***************************************************/
+
+//*********************************************************************
+// SolitaireGUI class contains the larger Solitaire GUI interface.
+// Compile and run the program from here.
+//*********************************************************************
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class SolitaireGUI extends JFrame{
+  
+  public static void main(String [] args){
+    JFrame frame = new JFrame ("Solitaire"); // creates the Solitaire frame
+    frame.setBackground(new Color(12, 105,15));
+    frame.setPreferredSize(new Dimension(670,1000));
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // enables ability to exit on red button. 
+    
+    Solitaire game = new Solitaire(); // creates the Game
+    
+    SolitairePanel panel = new SolitairePanel(game);//create a solitaire Panel
+    
+    // create the scroll bar
+    JScrollPane scroll = new JScrollPane(panel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);//create the scroll pane
+    
+    frame.getContentPane().add(scroll);//add the scroll pane to the frame
+    
+    frame.pack();
+    frame.setVisible(true);
+  }
+  
+  
+}

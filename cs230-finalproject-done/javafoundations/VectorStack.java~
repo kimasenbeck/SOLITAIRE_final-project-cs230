@@ -1,0 +1,49 @@
+/////////////////////////
+// Lab 5: Vector Array
+// Created by: Avanti Prasanna
+// Date: February 26, 2015
+////////////////////////
+
+package javafoundations; 
+
+import javafoundations.exceptions.*;
+import java.util.Vector;
+
+public class VectorStack<T> { /// implements Stack<T>
+  //Instance Variable
+  Vector<T> stack;
+  
+  public VectorStack(){
+    stack = new Vector<T> (); // cast array of objects to arrays of T. 
+  }
+  public int size(){
+    return stack.size();
+  }
+  
+  public void push(T element) {
+    stack.add(element);
+  }
+  
+  public void pop(T element) throws EmptyCollectionException {
+    if (stack.size() == 0) {
+      throw new EmptyCollectionException("Pop(): Cannot pop from an empty stack.");
+    }
+    stack.remove(stack.size()-1); 
+  }
+  
+  public T peek () throws EmptyCollectionException { 
+    if (stack.size() == 0) {
+      throw new EmptyCollectionException("Peek(): Cannot peek from an empty stack.");
+    }
+    return stack.lastElement();
+  }
+  
+  public String toString(){
+    String result = "<bottom of vector> ";
+    return result + stack.toString() +  " <top of vector>";
+  }
+  
+  public static void main(String [] args) {
+    
+  }
+}

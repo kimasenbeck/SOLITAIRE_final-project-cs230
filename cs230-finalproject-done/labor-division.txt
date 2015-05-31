@@ -1,0 +1,33 @@
+Amanda Foun, Kim Asenbeck, Avanti Prasanna
+CS 230 
+Professor Tjaden
+Updated May 13, 2015
+CS 230 Final Project: Labor Plan
+	
+This document describes how we distributes the programming effort among the members of our team. 
+
+**Amanda**
+randomShuffle()
+isLegal()
+gameOver()
+numMoves()
+Final commenting
+
+**Avanti** 
+Begin GUI setup 
+Constructor for Solitaire class 
+Create 8 columns with between 1 and 7 cards in each pile that are random and displayed so that the user can begin playing the game. Use the randomShuffle() algorithm to display the cards.
+Final commenting
+
+**Kim**
+Finish GUI setup 
+Timer 
+Move counter
+Scroll Pane functionality 
+Help pop-up (instructions) 
+suitCheck() 
+suitCount() 
+
+**Group Efforts**
+onCardClick()
+onDeckButtonClick()

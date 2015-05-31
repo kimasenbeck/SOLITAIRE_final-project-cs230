@@ -1,0 +1,39 @@
+/******************************************************
+  * TopPanel.java
+  * Avanti Prasanna, Kim Asenbeck, Amanda  Foun
+  * CS 230 Final Project: TopPanel Class
+  * Start Date: May 9, 2015 
+  * End Date: May 12, 2015
+  * ***************************************************/
+
+//*********************************************************************
+// TopPanel class creates the title, infoPanel and BottomPanel
+//*********************************************************************
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class TopPanel extends JPanel{
+  private JLabel name; 
+  public Solitaire game;
+  
+  public TopPanel(Solitaire game2){
+    setLayout(new BorderLayout());
+    name = new JLabel("    solitaire");
+    name.setFont(new Font("Courier New", Font.BOLD, 65)); //Sets Font
+    name.setForeground(Color.white);
+    add(name, BorderLayout.NORTH); 
+    
+    game = game2; 
+    
+    // add the InfoPanel
+    InfoPanel info = new InfoPanel(game);
+    add(info, BorderLayout.CENTER);
+    
+    // add the BottomPanel
+    BottomPanel bottom = new BottomPanel();
+    add(bottom, BorderLayout.SOUTH);
+  }
+  
+}

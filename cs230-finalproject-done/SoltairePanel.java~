@@ -1,0 +1,27 @@
+/* SoltairePanel.java
+ * creates the first three main panels: (1) the title panel (2) the game panel and (3) the buttons panel 
+ */
+
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+
+public class SoltairePanel extends JPanel{
+  
+  public SoltairePanel(){
+    setLayout(new BorderLayout());
+    
+    TopPanel top = new TopPanel();
+    GamePanel game = new GamePanel();
+    BottomPanel bottom = new BottomPanel();
+    
+    add(top, BorderLayout.NORTH);
+    add(game, BorderLayout.CENTER);
+    add(bottom, BorderLayout.SOUTH);
+  }
+  
+  
+  
+}

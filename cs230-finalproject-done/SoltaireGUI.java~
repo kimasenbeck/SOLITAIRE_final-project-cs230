@@ -1,0 +1,28 @@
+/* SoltaireGUI.java
+ * The larger Soltaire GUI interface. You compile and run the program from here. */
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+public class SoltaireGUI extends JFrame{
+  
+  public static void main(String [] args){
+    JFrame frame = new JFrame ("Solitaire"); // creates the Solitaire frame
+    frame.setBackground(new Color(12, 105,15));
+    frame.setPreferredSize(new Dimension(650,600));
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // enables ability to exit on red button. 
+    
+    SoltairePanel panel = new SoltairePanel();//create a solitaire Panel
+   
+    JScrollPane scroll = new JScrollPane();//create the scroll pane
+    scroll.getViewport().add(panel);//add the solitaire panel to the scroll pane
+    frame.getContentPane().add(scroll);//add the scroll pane to the frame
+    
+    frame.pack();
+    frame.setVisible(true);
+  }
+  
+  
+}
