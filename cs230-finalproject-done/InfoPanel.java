@@ -40,14 +40,27 @@ public class InfoPanel extends JPanel{
     add(welcome);
     
     // Timer 
-    timer = new JLabel("0"); //initialize at 0 seconds
+    timer = new JLabel(""); //initialize at 0 seconds
     timer.setFont(new Font("Courier New", Font.BOLD, 20)); //Sets Font of label
     timer.setForeground(Color.white);
     add(timer);//add the label to the gui
     ActionListener listener = new ActionListener() { //create new action listener
+      int timez = 0; 
+      int mins, secs;
+      String m, s; 
       public void actionPerformed(ActionEvent actionEvent) {//this action listener increments seconds by 1 each second
-        int t = Integer.parseInt(timer.getText())+1; //get the previous time, add one to it
-        timer.setText("" + t);//set the text of the label
+        timez++;
+        mins = timez/60;
+        secs = timez%60;
+        if (mins < 10){
+        m = "0" + mins;
+        }else{m = "" + mins;}
+        if (secs < 10){
+        s = "0" + secs;
+        }else{s = "" + secs;}
+        String formatted = m + ":" + s;
+        //int t = Integer.parseInt(timer.getText())+1; //get the previous time, add one to it
+        timer.setText("" + formatted);//set the text of the label
       }};
     Timer update = new Timer(1000, listener);//create a label with delay 1000 milliseconds and the above listener
     update.start(); //start the timer when GUI opens 

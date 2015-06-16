@@ -56,7 +56,7 @@ public class BottomPanel extends JPanel{
         JOptionPane helpBox = new JOptionPane();
         helpBox.showMessageDialog(null, "Rules:\nThe goal of the game is to sort the cards into four "+
                                   "piles,\neach containing cards in one suit. Cards must be in order \n"+
-                                  "from Ace to King, and must contain all 13 cards in each suit.\nTo achieve" + 
+                                  "from Ace to King, and must contain all 13 cards in each suit.\nTo achieve " + 
                                   "this goal, you may manipulate the order of the\ncards by sorting them. " + 
                                   "Cards must be sorted in alternating\ncolors, and may only be place under a" + 
                                   "card that is one value\nbigger than the be the next value, sequentially.\n" + 
