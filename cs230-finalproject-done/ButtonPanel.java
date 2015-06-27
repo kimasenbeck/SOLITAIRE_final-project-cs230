@@ -1,26 +1,26 @@
 /******************************************************
-  * BottomPanel.java
+  * ButtonPanel.java
   * Avanti Prasanna, Kim Asenbeck, Amanda  Foun
-  * CS 230 Final Project: BottomPanel Class
+  * CS 230 Final Project: ButtonPanel Class
   * Start Date: April 28, 2015
   * End Date: May 12, 2015
   * Avanti and Kim are primarily responsible for this class
   * ***************************************************/
 
 //**********************************************************************************
-// Bottom Panel provides the help button, the quit button, and the newGame button
+// Button Panel provides the help button, the quit button, and the newGame button
 //**********************************************************************************
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class BottomPanel extends JPanel{
+public class ButtonPanel extends JPanel{
   private JButton quit; 
   private JButton help; 
   private JButton newGame; 
   
-  public BottomPanel(){
+  public ButtonPanel(){
     
     setLayout(new GridLayout(1,4));
     

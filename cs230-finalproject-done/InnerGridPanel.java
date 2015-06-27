@@ -69,10 +69,10 @@ public class InnerGridPanel extends JPanel{
     showCard = new JLabel(showImage);
     labelCards[0][1] = showCard; 
     
-    //Number of Moves JLabel
-    numMoves = new JLabel("0");
-    numMoves.setFont(new Font("Courier New", Font.BOLD, 50)); //Sets Font
-    numMoves.setForeground(Color.white);
+//    //Number of Moves JLabel
+    numMoves = new JLabel("  ");
+//    numMoves.setFont(new Font("Courier New", Font.BOLD, 50)); //Sets Font
+//    numMoves.setForeground(Color.white);
     labelCards[0][2] = numMoves;
     
     // Add the four cards in the top right, one for each suit
@@ -223,9 +223,9 @@ public class InnerGridPanel extends JPanel{
     // handles when the user clicks 
     public void mouseClicked(MouseEvent e){
       
-      // increments number of moves
-      int num = Integer.parseInt(numMoves.getText())+1;
-      numMoves.setText("" + num); 
+//      // increments number of moves
+//      int num = Integer.parseInt(numMoves.getText())+1;
+//      numMoves.setText("" + num); 
       
       //MouseListener for Show Stack and Rest Stack.
       if (e.getComponent() == randomDeck) { // if the user clicks on the deck of cards
@@ -291,8 +291,6 @@ public class InnerGridPanel extends JPanel{
           int j = indices[1];
           Card end2 = game.cards[i-1][j]; // get the card object associated with where the user clicked
           int a = 0;
-//          while(game.cards[i+a][j] != null){
-          //game.cards[i][j] = start[0];
           if(game.cards[i-1][j] != null){ //if the destination is not null
             if (game.isLegal(end2, start[0])) { // if this is a legal move
               game.cards[i][j] = start[0];
@@ -344,10 +342,14 @@ public class InnerGridPanel extends JPanel{
             boolean over = game.isGameOver(); // checks if game is over
             if (over == true) {
               ImageIcon win = new ImageIcon("cards_gif/win.jpeg");
+              ImageIcon winner = new ImageIcon("cards_gif/winner.jpg");
+              JLabel winLabel = new JLabel(winner);
               clubsLabel.setIcon(win);
               diamondsLabel.setIcon(win);
               heartsLabel.setIcon(win);
               spadesLabel.setIcon(win);
+              //JOptionPane.showMessageDialog(null, "You win! Congratulations.");
+              JOptionPane.showMessageDialog(null, winLabel, "You Won! Congratulations.", JOptionPane.PLAIN_MESSAGE, null);
             }
           }
         }
@@ -444,9 +446,7 @@ public class InnerGridPanel extends JPanel{
               heartsLabel.setIcon(win);
               spadesLabel.setIcon(win);
             }
-              //JOptionPane helpBox = new JOptionPane();
-              //helpBox.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "#winning", JOptionPane.PLAIN_MESSAGE);
-            }
+           }
           }
         }
       }

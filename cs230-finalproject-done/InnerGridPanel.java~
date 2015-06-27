@@ -221,7 +221,7 @@ public class InnerGridPanel extends JPanel{
     }
     
     // handles when the user clicks 
-    public void mouseClicked(MouseEvent e) {
+    public void mouseClicked(MouseEvent e){
       
       // increments number of moves
       int num = Integer.parseInt(numMoves.getText())+1;
@@ -230,10 +230,16 @@ public class InnerGridPanel extends JPanel{
       //MouseListener for Show Stack and Rest Stack.
       if (e.getComponent() == randomDeck) { // if the user clicks on the deck of cards
         
-        if (game.restStack.isEmpty()){ // if the deck of cards is not empty
+        if (game.restStack.isEmpty() && game.showStack.isEmpty()){
+           ImageIcon empty = new ImageIcon("cards_gif/empty.gif");
+           showCard.setIcon(empty);
+        }
+        
+        else if (game.restStack.isEmpty()){ // if the deck of cards is empty
           game.restStack = game.showStack; // restStack stores the cards that the user has not seen
           game.showStack = new VectorStack<Card>(); // showStack stores the cards that the user sees/has seen
         }
+        try{
         Card card = game.restStack.pop(); // pop the top card from the restStack
         
         game.showStack.push(card); // put card on the showStack
@@ -241,6 +247,8 @@ public class InnerGridPanel extends JPanel{
         int order = card.getOrder(); // need the order to get the right card image on the JLabel
         ImageIcon c = new ImageIcon("cards_gif/"+order+".gif");
         showCard.setIcon(c); // updates icon
+        }
+        catch(javafoundations.exceptions.EmptyCollectionException ex){};
       }
       
       /// MouseListener for Moving Cards in Grid. 
@@ -283,8 +291,6 @@ public class InnerGridPanel extends JPanel{
           int j = indices[1];
           Card end2 = game.cards[i-1][j]; // get the card object associated with where the user clicked
           int a = 0;
-//          while(game.cards[i+a][j] != null){
-          //game.cards[i][j] = start[0];
           if(game.cards[i-1][j] != null){ //if the destination is not null
             if (game.isLegal(end2, start[0])) { // if this is a legal move
               game.cards[i][j] = start[0];
@@ -335,8 +341,12 @@ public class InnerGridPanel extends JPanel{
             click = 0;
             boolean over = game.isGameOver(); // checks if game is over
             if (over == true) {
-              ImageIcon kim = new ImageIcon("cards_gif/kim.gif");
-              heartsLabel.setIcon(kim);}
+              ImageIcon win = new ImageIcon("cards_gif/win.jpeg");
+              clubsLabel.setIcon(win);
+              diamondsLabel.setIcon(win);
+              heartsLabel.setIcon(win);
+              spadesLabel.setIcon(win);
+            }
           }
         }
       }
@@ -363,8 +373,12 @@ public class InnerGridPanel extends JPanel{
             click = 0;
             boolean over = game.isGameOver(); // checks if game is over
             if (over == true) {
-              ImageIcon kim = new ImageIcon("cards_gif/kim.gif");
-              spadesLabel.setIcon(kim);}
+              ImageIcon win = new ImageIcon("cards_gif/win.jpeg");
+              clubsLabel.setIcon(win);
+              diamondsLabel.setIcon(win);
+              heartsLabel.setIcon(win);
+              spadesLabel.setIcon(win);
+            }
           }
         }
       }
@@ -392,8 +406,12 @@ public class InnerGridPanel extends JPanel{
             click = 0;
             boolean over = game.isGameOver(); // checks if game is over
             if (over == true) {
-              ImageIcon kim = new ImageIcon("cards_gif/kim.gif");
-              diamondsLabel.setIcon(kim);}
+              ImageIcon win = new ImageIcon("cards_gif/win.jpeg");
+              clubsLabel.setIcon(win);
+              diamondsLabel.setIcon(win);
+              heartsLabel.setIcon(win);
+              spadesLabel.setIcon(win);
+            }
           }
         }
       }
@@ -418,11 +436,13 @@ public class InnerGridPanel extends JPanel{
             click = 0;
             boolean over = game.isGameOver(); // checks if game is over
             if (over == true) {
-              ImageIcon kim = new ImageIcon("cards_gif/kim.gif");
-              clubsLabel.setIcon(kim);}
-              //JOptionPane helpBox = new JOptionPane();
-              //helpBox.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "#winning", JOptionPane.PLAIN_MESSAGE);
+              ImageIcon win = new ImageIcon("cards_gif/win.jpeg");
+              clubsLabel.setIcon(win);
+              diamondsLabel.setIcon(win);
+              heartsLabel.setIcon(win);
+              spadesLabel.setIcon(win);
             }
+           }
           }
         }
       }

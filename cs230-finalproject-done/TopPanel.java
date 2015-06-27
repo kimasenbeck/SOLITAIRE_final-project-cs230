@@ -8,7 +8,7 @@
   * ***************************************************/
 
 //*********************************************************************
-// TopPanel class creates the title, infoPanel and BottomPanel
+// TopPanel class creates the title, infoPanel and ButtonPanel
 //*********************************************************************
 
 import java.awt.*;
@@ -20,21 +20,24 @@ public class TopPanel extends JPanel{
   public Solitaire game;
   
   public TopPanel(Solitaire game2){
-    setLayout(new BorderLayout());
-    name = new JLabel("    solitaire");
-    name.setFont(new Font("Courier New", Font.BOLD, 65)); //Sets Font
+    //create the border layout
+    setLayout(new BorderLayout()); 
+    
+    //create and modify title
+    name = new JLabel("    solitaire"); 
+    name.setFont(new Font("Courier New", Font.BOLD, 65));
     name.setForeground(Color.white);
     add(name, BorderLayout.NORTH); 
     
-    game = game2; 
+    game = game2; //the instance variable game refers to game2 (which was the parameter for the TopPanel) 
     
     // add the InfoPanel
     InfoPanel info = new InfoPanel(game);
     add(info, BorderLayout.CENTER);
     
-    // add the BottomPanel
-    BottomPanel bottom = new BottomPanel();
-    add(bottom, BorderLayout.SOUTH);
+    // add the ButtonPanel
+    ButtonPanel buttons = new ButtonPanel();
+    add(buttons, BorderLayout.SOUTH);
   }
   
 }
