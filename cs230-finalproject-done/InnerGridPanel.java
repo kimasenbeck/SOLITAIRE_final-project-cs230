@@ -19,6 +19,7 @@ import javax.swing.*;
 import java.awt.Component.*;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
+import javax.swing.JOptionPane;
 
 import java.io.*;
 import java.util.*;
@@ -312,11 +313,19 @@ public class InnerGridPanel extends JPanel{
       
       //MouseListener for ShowStack and JLabel Grid.
       if (e.getComponent() == showCard){ 
+        if (click==0){ // first click
         Card card = game.showStack.pop(); // pop the top card from the showStack;
         start[0] = card; // puts it in start 
         ImageIcon green= new ImageIcon("cards_gif/green.png"); // green/background image 
         showCard.setIcon(green); 
-        click = 1; 
+        click = 1;
+        }else{ 
+          game.showStack.push(start[0]);
+          int order = start[0].getOrder();
+          ImageIcon undo = new ImageIcon("cards_gif/"+order+".gif");
+          showCard.setIcon(undo);
+          click = 0;
+        }
       }
       
       //MouseListener for the Four Suit Stacks
@@ -342,14 +351,14 @@ public class InnerGridPanel extends JPanel{
             boolean over = game.isGameOver(); // checks if game is over
             if (over == true) {
               ImageIcon win = new ImageIcon("cards_gif/win.jpeg");
-              ImageIcon winner = new ImageIcon("cards_gif/winner.jpg");
-              JLabel winLabel = new JLabel(winner);
+              ImageIcon winImage = new ImageIcon("cards_gif/winner.jpg");
+              JLabel winLabel = new JLabel(winImage);
+              JOptionPane.showMessageDialog(null, winLabel, "You Won! Congratulations.", JOptionPane.PLAIN_MESSAGE, null);
               clubsLabel.setIcon(win);
               diamondsLabel.setIcon(win);
               heartsLabel.setIcon(win);
               spadesLabel.setIcon(win);
               //JOptionPane.showMessageDialog(null, "You win! Congratulations.");
-              JOptionPane.showMessageDialog(null, winLabel, "You Won! Congratulations.", JOptionPane.PLAIN_MESSAGE, null);
             }
           }
         }
@@ -382,6 +391,9 @@ public class InnerGridPanel extends JPanel{
               diamondsLabel.setIcon(win);
               heartsLabel.setIcon(win);
               spadesLabel.setIcon(win);
+              ImageIcon winImage = new ImageIcon("cards_gif/winner.jpg");
+              JLabel winLabel = new JLabel(winImage);
+              JOptionPane.showMessageDialog(null, winLabel, "You Won! Congratulations.", JOptionPane.PLAIN_MESSAGE, null);
             }
           }
         }
@@ -415,6 +427,9 @@ public class InnerGridPanel extends JPanel{
               diamondsLabel.setIcon(win);
               heartsLabel.setIcon(win);
               spadesLabel.setIcon(win);
+              ImageIcon winImage = new ImageIcon("cards_gif/winner.jpg");
+              JLabel winLabel = new JLabel(winImage);
+              JOptionPane.showMessageDialog(null, winLabel, "You Won! Congratulations.", JOptionPane.PLAIN_MESSAGE, null);
             }
           }
         }
@@ -445,6 +460,9 @@ public class InnerGridPanel extends JPanel{
               diamondsLabel.setIcon(win);
               heartsLabel.setIcon(win);
               spadesLabel.setIcon(win);
+              ImageIcon winImage = new ImageIcon("cards_gif/winner.jpg");
+              JLabel winLabel = new JLabel(winImage);
+              JOptionPane.showMessageDialog(null, winLabel, "You Won! Congratulations.", JOptionPane.PLAIN_MESSAGE, null);
             }
            }
           }
