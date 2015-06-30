@@ -351,7 +351,7 @@ public class InnerGridPanel extends JPanel{
             boolean over = game.isGameOver(); // checks if game is over
             if (over == true) {
               ImageIcon win = new ImageIcon("cards_gif/win.jpeg");
-              ImageIcon winImage = new ImageIcon("cards_gif/winner.jpg");
+              ImageIcon winImage = new ImageIcon("cards_gif/fireworks.gif");
               JLabel winLabel = new JLabel(winImage);
               JOptionPane.showMessageDialog(null, winLabel, "You Won! Congratulations.", JOptionPane.PLAIN_MESSAGE, null);
               clubsLabel.setIcon(win);
@@ -391,7 +391,7 @@ public class InnerGridPanel extends JPanel{
               diamondsLabel.setIcon(win);
               heartsLabel.setIcon(win);
               spadesLabel.setIcon(win);
-              ImageIcon winImage = new ImageIcon("cards_gif/winner.jpg");
+              ImageIcon winImage = new ImageIcon("cards_gif/fireworks.gif");
               JLabel winLabel = new JLabel(winImage);
               JOptionPane.showMessageDialog(null, winLabel, "You Won! Congratulations.", JOptionPane.PLAIN_MESSAGE, null);
             }
@@ -427,7 +427,7 @@ public class InnerGridPanel extends JPanel{
               diamondsLabel.setIcon(win);
               heartsLabel.setIcon(win);
               spadesLabel.setIcon(win);
-              ImageIcon winImage = new ImageIcon("cards_gif/winner.jpg");
+              ImageIcon winImage = new ImageIcon("cards_gif/fireworks.gif");
               JLabel winLabel = new JLabel(winImage);
               JOptionPane.showMessageDialog(null, winLabel, "You Won! Congratulations.", JOptionPane.PLAIN_MESSAGE, null);
             }
@@ -460,7 +460,7 @@ public class InnerGridPanel extends JPanel{
               diamondsLabel.setIcon(win);
               heartsLabel.setIcon(win);
               spadesLabel.setIcon(win);
-              ImageIcon winImage = new ImageIcon("cards_gif/winner.jpg");
+              ImageIcon winImage = new ImageIcon("cards_gif/fireworks.gif");
               JLabel winLabel = new JLabel(winImage);
               JOptionPane.showMessageDialog(null, winLabel, "You Won! Congratulations.", JOptionPane.PLAIN_MESSAGE, null);
             }
